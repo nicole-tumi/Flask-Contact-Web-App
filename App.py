@@ -16,7 +16,7 @@ app.secret_key ='mysecretkey'
 # Decodador
 @app.route('/')
 def Index():
-    cur = mysql.connection.cursor()
+    cur = mysql.connection.cursor() # Se establece la conexion
     cur.execute('SELECT * FROM contactos') # se obtiene una tupla de contactos
     data = cur.fetchall()
     return render_template('index.html', contacts = data)
