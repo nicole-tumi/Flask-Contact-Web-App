@@ -40,7 +40,6 @@ def get_contact(id):
     cur.execute('SELECT * FROM contactos WHERE id = %s', (id))
     data = cur.fetchall()
     return render_template('edit-contact.html', contact = data[0])
-    # 48:29 min
 
 @app.route('/update/<id>', methods = ['POST'])
 def update_contac(id):
